@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Pages.LeafEditPage"
+             xmlns:controls="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
+             xmlns:viewModels="clr-namespace:FinalProject">
+
+    <ContentPage.Resources>
+        <!-- Styles similar to SupplierEditPage -->
+        <Style TargetType="HorizontalStackLayout">
+            <Setter Property="Spacing" Value="100" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="WidthRequest" Value="100" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="BorderColor" Value="Gray" />
+            <Setter Property="BorderWidth" Value="2" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="WidthRequest" Value="50" />
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="WidthRequest" Value="50" />
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- Main Layout -->
+    <Grid RowDefinitions="Auto,*">
+        <Label Text="Leaf Type Entry" Grid.Row="0" HeightRequest="50" />
+        <Grid Grid.Row="1" RowDefinitions="*,Auto">
+            <Border>
+                <Frame BackgroundColor="#ebf4e5" Padding="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
+                    <VerticalStackLayout WidthRequest="450" Padding="10" Spacing="20">
+
+                        <!-- Select Leaf Type -->
+                        <HorizontalStackLayout Padding="10">
+                            <Label Text="Select Leaf Type" HorizontalOptions="Start" WidthRequest="150"/>
+                            <Picker x:Name="LeafPicker" WidthRequest="150" HorizontalOptions="End" />
+                        </HorizontalStackLayout>
+
+                        <!-- Enter Leaf Type -->
+                        <HorizontalStackLayout Padding="10">
+                            <Label Text="Enter Leaf Type" HorizontalOptions="Start" WidthRequest="150"/>
+                            <Entry x:Name="LeafEntry" WidthRequest="150" HorizontalOptions="End" Placeholder="Enter Leaf Type" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Padding="10">
+                            <Label Text="Enter Base Rate" HorizontalOptions="Start" WidthRequest="150"/>
+                            <Entry x:Name="BaseRate" WidthRequest="150" HorizontalOptions="End" Placeholder="Enter Leaf Type" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Padding="10">
+                            <Label Text="Enter Value" HorizontalOptions="Start" WidthRequest="150"/>
+                            <Entry x:Name="Value" WidthRequest="150" HorizontalOptions="End" Placeholder="Enter Leaf Type" />
+                        </HorizontalStackLayout>
+
+                        <!-- Buttons for Add, Update, Delete -->
+                        <HorizontalStackLayout VerticalOptions="End" Spacing="10" HorizontalOptions="End">
+                            <Button Text="Add" Clicked="OnAddLeafClicked" />
+                            <Button Text="Update" Clicked="OnUpdateLeafClicked" />
+                            <Button Text="Delete" Clicked="OnDeleteLeafClicked" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

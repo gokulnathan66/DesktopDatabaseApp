@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Microsoft.Maui.Controls;assembly=Microsoft.Maui.Controls"
+
+             x:Class="FinalProject.Pages.Home"
+             Title="Home">
+    <Grid>
+        <!-- Your grid content goes here -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Image Source="homepage.jpg" Opacity=".90" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill" />
+
+
+
+        <!--   <Image Source="icon.png" HorizontalOptions="End" VerticalOptions="Start" Aspect="Center" ></Image> -->
+
+        <VerticalStackLayout   Padding="20" HorizontalOptions="Start" VerticalOptions="Center" Spacing="0" >
+            <Label Text="Your Personalised Data Entry App " FontSize="50"  Padding="10" FontFamily="Garamond" FontAttributes="Bold" WidthRequest="950" TextColor="White"></Label>
+            <Label Text=" Data Entry app"  TextColor="white" FontSize="30" FontFamily="Garamond" FontAttributes="Bold"></Label>
+        </VerticalStackLayout>
+        
+    </Grid>
+</ContentPage>

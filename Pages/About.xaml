@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Pages.About"
+             Title="About">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+
+
+            <!-- Title Section -->
+            <Label 
+                Text="About the Desktop Data Management System"
+                FontSize="28" 
+                FontAttributes="Bold"
+                HorizontalOptions="Center" 
+                Margin="0,10" />
+
+
+            <Label 
+                Text="Efficiently manage your Data, track supplier transactions, and keep records types and their details."
+                FontSize="16"
+                HorizontalOptions="Center" 
+                Margin="0,10" 
+                LineBreakMode="WordWrap" 
+                HorizontalTextAlignment="Center"/>
+
+            <!-- Features Section -->
+            <Label 
+                Text="Features:"
+                FontSize="22" 
+                FontAttributes="Bold" 
+                HorizontalOptions="Start" 
+                Margin="0,15,0,5" />
+
+            <Frame Padding="15" Margin="0,0,0,10" BackgroundColor="#ECF0F1" CornerRadius="10" BorderColor="#BDC3C7" HasShadow="True">
+                <Label 
+                    Text=" User-friendly interface for easy navigation. Manage suppliers and leaf types effectively. Validate data inputs for accuracy. Track transactions and generate records."
+                    FontSize="15"
+                    LineBreakMode="WordWrap" />
+            </Frame>
+
+            <!-- How to Use Section -->
+            <Label 
+                Text="How to Use:"
+                FontSize="22" 
+                FontAttributes="Bold" 
+                HorizontalOptions="Start" 
+                Margin="0,15,0,5" />
+
+            <Frame Padding="15" BackgroundColor="#ECF0F1" CornerRadius="10" BorderColor="#BDC3C7" HasShadow="True">
+                <Label 
+                    Text=" Select a supplier and leaf type. Enter transaction details including quantity and advance paid. Submit the form to save the transaction."
+                    FontSize="15"
+                    LineBreakMode="WordWrap" />
+            </Frame>
+
+            <!-- Developer Info Section -->
+            <Label 
+                Text="Developed by Gokulnathan B" 
+                FontSize="16" 
+                HorizontalOptions="Center" 
+                Margin="0,20,0,0" />
+            <Label 
+               Text="gokulnahtan.22cs@kct.ac.in" 
+               FontSize="16" 
+               HorizontalOptions="Center" 
+               Margin="0,20,0,0" />
+
+            <Label 
+                Text="Version: 1.0" 
+                FontSize="16" 
+                HorizontalOptions="Center" 
+                Margin="0,0,0,20" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

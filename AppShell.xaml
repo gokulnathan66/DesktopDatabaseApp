@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FinalProject.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FinalProject"
+    Shell.FlyoutBehavior="Locked" 
+    Shell.FlyoutWidth="200"
+    FlyoutBackgroundColor="#d5f5d7"
+    Title="FinalProject">
+    
+    
+    
+    <Shell.FlyoutHeader>
+        <StackLayout WidthRequest="100" HeightRequest="200">
+            <Image Source="icon.png" VerticalOptions="CenterAndExpand"  WidthRequest="175" HeightRequest="200"></Image>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <VerticalStackLayout VerticalOptions="CenterAndExpand"  >
+                <HorizontalStackLayout>
+                    <Image Source="{Binding Icon}" 
+                       Margin="5"
+                       HeightRequest="25" ></Image>
+                <Label 
+                       Text="{Binding Title}"
+                       VerticalTextAlignment="Center"
+                        FontSize="13"
+                    FontAttributes="Bold"
+                       HeightRequest="50"
+                       WidthRequest="200"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <ShellContent
+        Title="Home"
+        Icon="home.png"
+        ContentTemplate="{DataTemplate local:Pages.Home}"
+        Route="Pages.Home" />
+    <ShellContent
+        Title="Data Entry"
+        Icon="database.png"
+
+        ContentTemplate="{DataTemplate local:Pages.DataEntryPage}"
+        Route="Pages.DataEntryPage" />
+    <ShellContent
+        Title="Generic Report"
+        Icon="report.png"
+        ContentTemplate="{DataTemplate local:Pages.GenericEntryPage}"
+        Route="GenericEntryPage" />
+    <ShellContent
+        Title="Monthly report"
+        Icon="calander.png"
+        ContentTemplate="{DataTemplate local:Pages.MonthlyReport}"
+        Route="MonthlyReport" />
+    <ShellContent
+      Title="Settings"
+      Icon="settings.png"
+      ContentTemplate="{DataTemplate local:Pages.SettingPage}"
+      Route="SettingPage" />
+    <ShellContent
+      Title="About"
+      Icon="about.png"
+      ContentTemplate="{DataTemplate local:Pages.About}"
+      Route="About" />
+
+    <!--<MenuItem  IconImageSource="home.png" Text="Settings">
+    </MenuItem>-->
+
+
+</Shell>

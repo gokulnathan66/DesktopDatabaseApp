@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Pages.SettingPage">
+
+    <!-- Resource Styles -->
+    <ContentPage.Resources>
+        <Style TargetType="HorizontalStackLayout">
+            <Setter Property="Spacing" Value="100" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="WidthRequest" Value="100" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="BorderColor" Value="Gray" />
+            <Setter Property="BorderWidth" Value="2" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="WidthRequest" Value="50" />
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="WidthRequest" Value="50" />
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- Main Grid Layout with Border and Frame -->
+    <Grid RowDefinitions="Auto,*" Padding="30">
+        <!-- Title -->
+        <Label Text="Settings" FontSize="30" WidthRequest="200" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+
+        <!-- Main Section with Border and Frame -->
+        <Grid Grid.Row="1" RowDefinitions="*,Auto">
+            <Border>
+                <Frame BackgroundColor="#ebf4e5" Padding="0" VerticalOptions="Center" HorizontalOptions="Center">
+                    <VerticalStackLayout WidthRequest="450" Padding="20" Spacing="20">
+                        <!-- Button to Navigate to SupplierEditPage -->
+                        <HorizontalStackLayout Padding="10">
+                            <Label Text="Edit Supplier " HorizontalOptions="Start" WidthRequest="150" />
+                            <Button Text="Go" Clicked="OnEditSupplierClicked"  WidthRequest="80"  HorizontalOptions="End" />
+                        </HorizontalStackLayout>
+
+                        <!-- Button to Navigate to LeafEditPage -->
+                        <HorizontalStackLayout Padding="10">
+                            <Label Text="Edit Leaf Types" HorizontalOptions="Start" WidthRequest="150" />
+                            <Button Text="Go"  WidthRequest="80"  Clicked="OnEditLeafClicked" HorizontalOptions="End" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </Border>
+        </Grid>
+    </Grid>
+
+</ContentPage>

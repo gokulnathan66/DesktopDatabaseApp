@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
+
+             x:Class="FinalProject.Pages.MonthlyReportData"
+             xmlns:viewModels="clr-namespace:FinalProject"
+             Title="MonthlyReportData">
+
+    <ContentPage.BindingContext>
+        <viewModels:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame">
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="BackgroundColor" Value="#E2EFDA"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BorderColor" Value="Gray" />
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="Opacity" Value="75"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="WidthRequest" Value="80"/>
+                <Setter Property="HeightRequest" Value="40"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout HorizontalOptions="Center"  Padding="10"  MaximumWidthRequest="800">
+            <Label Text="Monthly Report" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <!-- Information Section -->
+            <StackLayout Spacing="10">
+                <HorizontalStackLayout>
+                    <Label Text="Financial Year" WidthRequest="150" BackgroundColor="#4472C4" TextColor="White" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    <Label  x:Name="financial_year" WidthRequest="150" BackgroundColor="#B4C6E7" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="Month " WidthRequest="150" BackgroundColor="#4472C4" TextColor="White" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    <Label x:Name="Month_name" WidthRequest="150" BackgroundColor="#B4C6E7" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                </HorizontalStackLayout>
+            </StackLayout>
+
+
+            <!-- DataGrid Section -->
+            <controls:DataGrid
+                x:Name="monthlygrid"
+                RowHeight="40"
+                HeaderHeight="50"
+                BackgroundColor="White"
+                BorderColor="Black"
+                HeaderBackground="#70AD47">
+                <!-- Define Columns -->
+                <controls:DataGrid.Columns>
+                    <controls:DataGridColumn Title="Supplier" PropertyName="Name" Width="*" />
+                    <controls:DataGridColumn Title="Particular" PropertyName="Particular" Width="*" />
+                    <controls:DataGridColumn Title="Value" PropertyName="Value" Width="*" />
+                    <controls:DataGridColumn Title="Baserate" PropertyName="BasicRate" Width="*" />
+                    <controls:DataGridColumn Title="Quantity" PropertyName="Quantity" Width="*" />
+                    <controls:DataGridColumn Title="Advance" PropertyName="AdvancePaid" Width="*" />
+                </controls:DataGrid.Columns>
+            </controls:DataGrid>
+            <!-- Buttons Section -->
+            <HorizontalStackLayout Spacing="30" HorizontalOptions="Center">
+                <Button Text="Home" Clicked="HomeButton_Clicked" BackgroundColor="ForestGreen" />
+                <Button Text="Print" Clicked="PrintButton_Clicked" BackgroundColor="Orange" />
+            </HorizontalStackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

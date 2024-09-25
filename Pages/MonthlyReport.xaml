@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Pages.MonthlyReport"
+             xmlns:viewModels="clr-namespace:FinalProject"
+             Title="MonthlyReport">
+    <ContentPage.Resources>
+        <Style  TargetType="HorizontalStackLayout">
+            <Style.Setters>
+                <Setter Property="Spacing" Value="100"></Setter>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="WidthRequest" Value="100"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+            <Setter Property="BorderColor" Value="Gray"/>
+            <Setter Property="BorderWidth" Value="2"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="WidthRequest" Value="50"/>
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="WidthRequest" Value="50"/>
+        </Style>
+    </ContentPage.Resources>
+    <Grid RowDefinitions="Auto,*">
+        <Label Text='Leaf Entry' Grid.Row="0"  HeightRequest="50"></Label>
+        <Grid Grid.Row="1"  RowDefinitions="*,Auto">
+            <Border>
+                <Frame BackgroundColor="#ebf4e5" Padding="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" >
+                    <VerticalStackLayout  Padding="10" Spacing="20"  >
+                        <HorizontalStackLayout >
+                            <Label Text="Year "></Label>
+                            <Picker HorizontalOptions="Center" WidthRequest ="150" ItemsSource="{Binding Years}" x:Name="year">
+                            </Picker>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout>
+                            <Label Text="Month"></Label>
+                            <Picker  HorizontalOptions="Center" WidthRequest ="150" x:Name="month">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>JAN</x:String>
+                                        <x:String>FEB</x:String>
+                                        <x:String>MAR</x:String>
+                                        <x:String>APR</x:String>
+                                        <x:String>MAY</x:String>
+                                        <x:String>JUN</x:String>
+                                        <x:String>JUL</x:String>
+                                        <x:String>AUG</x:String>
+                                        <x:String>SEP</x:String>
+                                        <x:String>OCT</x:String>
+                                        <x:String>NOV</x:String>
+                                        <x:String>DEC</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Spacing="50"    VerticalOptions="End" HorizontalOptions="End">
+                            <Button Text="Submit"  Clicked="Submiting_date" ></Button>
+                            <Button Text="Reset" Clicked="Button_Clicked"></Button>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</ContentPage>
